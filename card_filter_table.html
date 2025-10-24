@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Страница с таблицей</title>
+</head>
+<body>
+    <div class="links_block">
+        <p><a href="index.html">Самые рейтинговые ЖК</a></p>
+        <p><a href="card_filter_table.html">Список самых рейтинговых ЖК</a></p>
+    </div>
+    <hr>
+    <details>
+        <summary>График</summary>
+        <form>
+            <h4>Значение по оси ОХ</h4>
+            <input type="radio" name="ox_value" value="ox_type">Тип ЖК<br>
+            <input type="radio" name="ox_value" value="ox_location">Расположение ЖК<br>
+            <input type="radio" name="ox_value" value="ox_creation_year">Год постройки<br>
+
+            <h4>Значение по оси OY</h4>
+            <input type="checkbox" name="oy_value" value="oy_rating">Минимальный рейтинг ЖК<br>
+            <input type="checkbox" name="oy_value" value="oy_reviews">Максимальный рейтинг ЖК<br>
+            <input type="checkbox" name="oy_value" value="oy_count_apart">Число квартир<br><br>
+
+            <input type="submit" value="Построить график">
+            <p>Здесь будет график</p>
+        </form>
+    </details>
+    <details>
+        <summary>Фильтр</summary>
+        <form>
+            <p>
+                <label for="filter_name">Название:</label>
+                <input type="text" id="filter_name" name="filter_name">
+            </p>
+            <p>
+                <label for="filer_type">Тип ЖК:</label>
+                <input type="text" id="filer_type" name="filer_type">
+            </p>
+            <p>
+                <label for="filter_location">Расположение:</label>
+                <input type="text" id="filter_location" name="filter_location">
+            </p>
+            <p>
+                <label for="filter_count_apart">Число квартир ЖК:</label>
+                <input type="text" id="filter_count_apart" name="filter_count_apart">
+            </p>
+            <p>
+                <label for="before_filter_creation_year">Год постройки: от </label>
+                <input type="text" id="before_filter_creation_year" name="before_filter_creation_year">
+                <label for="after_filter_creation_year"> до </label>
+                <input type="text" id="after_filter_creation_year" name="after_filter_creation_year">
+            </p>
+            <p>
+                <label for="before_filter_rating">Рейтинг ЖК: от </label>
+                <input type="text" id="before_filter_rating" name="before_filter_rating">
+                <label for="after_filter_rating"> до </label>
+                <input type="text" id="after_filter_rating" name="after_filter_rating">
+            </p>
+            <input type="submit" value="Найти">
+            <br><br>
+        </form>
+    </details>
+    <details>
+        <summary>Сортировка</summary>
+        <form>
+            <p>
+                <label for="first_level">Первый уровень: </label>
+                <select id="first_level" name="first_level">
+                    <option value="none">Нет</option>
+                    <option value="name">Название</option>
+                    <option value="type">Тип ЖК</option>
+                    <option value="location">Расположение</option>
+                    <option value="count_apart">Число квартир</option>
+                    <option value="creation_year">Год постройки</option>
+                    <option value="rating">Рейтинг ЖК</option>
+                </select>
+                <label for="first_level_order"> по убыванию? </label>
+                <input type="checkbox" id="first_level_order" name="first_level_order">
+            </p>
+             <p>
+                <label for="second_level">Второй уровень: </label>
+                <select id="second_level" name="second_level">
+                    <option value="none">Нет</option>
+                    <option value="name">Название</option>
+                    <option value="type">Тип ЖК</option>
+                    <option value="location">Расположение</option>
+                    <option value="count_apart">Число квартир</option>
+                    <option value="creation_year">Год постройки</option>
+                    <option value="rating">Рейтинг ЖК</option>
+                </select>
+                <label for="second_level_order"> по убыванию? </label>
+                <input type="checkbox" id="second_level_order" name="second_level_order">
+            </p>
+            <p>
+                <label for="third_level">Второй уровень: </label>
+                <select id="third_level" name="third_level">
+                    <option value="none">Нет</option>
+                    <option value="name">Название</option>
+                    <option value="type">Тип ЖК</option>
+                    <option value="location">Расположение</option>
+                    <option value="count_apart">Число квартир</option>
+                    <option value="creation_year">Год постройки</option>
+                    <option value="rating">Рейтинг ЖК</option>
+                </select>
+                <label for="third_level_order"> по убыванию? </label>
+                <input type="checkbox" id="third_level_order" name="third_level_order">
+            </p>
+            <input type="submit" value="Сортировать">
+            <br><br>
+        </form>
+    </details>
+    <table border="1" cellpadding="5" cellspacing="0">
+        <thead>
+            <tr>
+                <th>Название ЖК</th>
+                <th>Тип ЖК</th>
+                <th>Расположение</th>
+                <th>Год постройки</th>
+                <th>Число квартир</th>
+                <th>Рейтинг</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Центр-Сити</td>
+                <td>Комплекс с микрорайоном и кварталом</td>
+                <td>Владивосток, ул. Набережная, 15</td>
+                <td>2018</td>
+                <td>450</td>
+                <td>4.8</td>
+            </tr>
+            <tr>
+                <td>Зеленый Берег</td>
+                <td>Комплекс с огороженной территорией</td>
+                <td>Владивосток, пр-т Красного Знамени, 123</td>
+                <td>2021</td>
+                <td>1200</td>
+                <td>4.5</td>
+            </tr>
+            <tr>
+                <td>Императорский</td>
+                <td>Комплекс премиум-класса</td>
+                <td>Владивосток, ул. Фонтанная, 45</td>
+                <td>2015</td>
+                <td>85</td>
+                <td>4.9</td>
+            </tr>
+            <tr>
+                <td>Солнечный</td>
+                <td>Комплекс с микрорайоном и кварталом</td>
+                <td>Владивосток, ул. Светланская, 78</td>
+                <td>2019</td>
+                <td>2500</td>
+                <td>4.2</td>
+            </tr>
+            <tr>
+                <td>Невские Паруса</td>
+                <td>Комплекс с огороженной территорией</td>
+                <td>Владивосток, ул. Русская, 256</td>
+                <td>2020</td>
+                <td>800</td>
+                <td>4.6</td>
+            </tr>
+            <tr>
+                <td>Зеленый фонарь</td>
+                <td>Комплекс с огороженной территорией</td>
+                <td>Владивосток, ул. Херсонская, 3/td>
+                <td>2018</td>
+                <td>1000</td>
+                <td>4.1</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
