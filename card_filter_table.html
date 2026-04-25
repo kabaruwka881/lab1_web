@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Страница с таблицей</title>
+  <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+    <div class="links_block">
+        <p><a href="index.html">Самые рейтинговые ЖК</a></p>
+        <p><a href="card_filter_table.html">Список самых рейтинговых ЖК</a></p>
+    </div>
+    <hr>
+    <details>
+        <summary>График</summary>
+        <form>
+            <h4>Значение по оси ОХ</h4>
+            <input type="radio" name="ox_value" value="ox_type">Тип ЖК<br>
+            <input type="radio" name="ox_value" value="ox_creation_year">Год постройки<br>
+
+            <h4>Значение по оси OY</h4>
+            <input type="checkbox" name="oy_value" value="oy_rating">Минимальный рейтинг ЖК<br>
+            <input type="checkbox" name="oy_value" value="oy_reviews">Максимальный рейтинг ЖК<br>
+            <input type="checkbox" name="oy_value" value="oy_count_apart">Число квартир<br><br>
+
+            <input type="submit" value="Построить график">
+            <p>Здесь будет график</p>
+        </form>
+    </details>
+    <details>
+        <summary>Фильтр</summary>
+        <form id="filter">
+            <p>
+                <label for="structure">Название:</label>
+                <input type="text" id="structure" name="structure">
+            </p>
+            <p>
+                <label for="category">Тип:</label>
+                <input type="text" id="category" name="category">
+            </p>
+            <p>
+                <label for="country">Страна:</label>
+                <input type="text" id="country" name="country">
+            </p>
+            <p>
+                <label for="city">Город:</label>
+                <input type="text" id="city" name="city">
+            </p>
+            <p>
+                <label for="yearFrom">Год: </label>
+                от <input type="number" id="yearFrom" name="yearFrom">
+                до <input type="number" id="yearTo" name="yearTo">
+            </p>
+            <p>
+                <label for="heightFrom">Высота:</label>
+                от <input type="number" id="heightFrom" name="heightFrom">
+                до <input type="number" id="heightTo" name="heightTo">
+            </p>
+            <input type="button" id="findButton" value="Найти">
+            <input type="button" id="clearButton" value="Очистить фильтры">
+        </form>
+    </details>
+    <details>
+        <summary>Сортировка</summary>
+        <form id="sort">
+            <p> Сортировать по</p>
+            <p>
+                <select id="fieldsFirst">
+                </select>
+                по убыванию? <input type="checkbox" id="fieldsFirstDesc">
+            </p>
+            <p>
+                <select id="fieldsSecond">
+                </select>
+                по убыванию? <input type="checkbox" id="fieldsSecondDesc">
+            </p>
+            <p>
+                <select id="fieldsThird">
+                </select>
+                по убыванию? <input type="checkbox" id="fieldsThirdDesc">
+            </p>
+            <input type="button" id="sortButton" value="Сортировать">
+            <input type="button" id="resetSortButton" value="Сбросить сортировку">
+        </form>
+    </details>
+    <table id="list">
+    </table>
+
+    <script src="JavaScript/data.js"></script>
+    <script src="JavaScript/table.js"></script>
+    <script src="JavaScript/filter.js"></script>
+    <script src="JavaScript/sort.js"></script>
+    <script src="JavaScript/main.js"></script>
+</body>
+</html>
